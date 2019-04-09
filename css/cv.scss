@@ -1,0 +1,260 @@
+$gris:#D7D8D9;
+$azul:#295782;
+$celeste:#3A92CE;
+$cyan:#53c7f2;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Cabin';
+  background-color: gray;
+}
+
+.cv {
+  width: 800px;
+  height: 1150px;
+  background-color: $gris;
+  display: flex;
+  .mitad {
+    flex-direction: row;
+    &.izquierda {
+      width: 320px;
+      background-color: $gris;
+      box-shadow: inset -20px -20px 26px 0 #423e3e3d;
+      .seccion {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+        margin-bottom: 0px;
+        &:not(.contacto) {
+          margin-bottom: -50px;
+        }
+        &.habilidades {
+          .titulo {
+            background-color: $azul;
+            box-shadow: 0px -10px 3px -5px #C3C5C6;
+          }
+          .contenido {
+            background-color: $azul;
+            box-shadow: 0px -6px 3px -1px #C3C5C6;
+          }
+        }
+        &.frameworks {
+          .titulo {
+            background-color: $celeste;
+            box-shadow: 0px -10px 3px -5px #244C71;
+          }
+          .contenido {
+            background-color: $celeste;
+            box-shadow: 0px -6px 3px -1px #244C71;
+          }
+        }
+        &.contacto {
+          .titulo {
+            background-color: $cyan;
+            box-shadow: 0px -10px 3px -5px #3583BB;
+          }
+          .contenido {
+            background-color: $cyan;
+            box-shadow: 0px -6px 3px -1px #3583BB;
+          }
+        }
+        .titulo {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 240px;
+          height: 50px;
+          border-radius: 25px 25px 0px 0px;
+          transform: translateY(25px);
+          span {
+            text-transform: uppercase;
+            font-size: 28px;
+          }
+        }
+        .contenido {
+          width: 100%;
+          padding: 30px 0px 50px 0px;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          align-content: center;
+          ul {
+            list-style: none;
+            li {
+              padding: 6px 0px;
+            }
+          }
+          .textos {
+            width: 40%;
+          }
+          .estrellas {
+            width: 40%;
+          }
+          .framework {
+            width: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 5px;
+            &.laravel {
+              .icono {
+                width: 55px;
+                height: 55px;
+                background-color: white;
+                border-radius: 20%;
+                background-image: url('../images/laravel.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              }
+              .nombre {
+                padding: 10px;
+                font-size: 18px;
+              }
+            }
+            &.angular {
+              .icono {
+                width: 55px;
+                height: 55px;
+                background-image: url('../images/angular.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              }
+              .nombre {
+                padding: 10px;
+                font-size: 18px;
+              }
+            }
+            &.ionic {
+              .icono {
+                width: 55px;
+                height: 55px;
+                background-color: white;
+                border-radius: 20%;
+                background-image: url('../images/ionic.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+              }
+              .nombre {
+                padding: 10px;
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+      .perfil {
+        height: 330px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .foto {
+          width: 200px;
+          height: 200px;
+          border-radius: 10px;
+          background-image: url('https://via.placeholder.com/200');
+        }
+        .nombre {
+          margin: 5px;
+          font-size: 30px;
+          font-weight: 500;
+        }
+        .titulo {
+          font-size: 20px;
+          color: $azul;
+        }
+      }
+    }
+    &.derecha {
+      width: 480px;
+      background-color: white;
+      padding-top: 40px;
+      .seccion {
+        &.informacion {
+          .texto {
+            padding: 20px;
+            text-align: justify;
+            color: gray;
+            line-height: 25px;
+          }
+        }
+        &.educacion {
+          .doscolumnas {
+            margin-top: 20px;
+            padding-left: 40px;
+            display: flex;
+            justify-content: center;
+            .columna{
+              &.chica {
+                display: flex;
+                align-items: center;
+                width: 20%;
+              }
+              &.grande {
+                width: 60%;
+                ul {
+                  list-style-type: none;
+                }
+              }
+              ul {
+                li {
+                  color: grey;
+                  span {
+                    color: #2471A3;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.expriencia {
+          margin-top: 20px;
+        }
+        .cinta {
+          width: calc(100% - 25px);
+          transform: translateX(-15px);
+          height: 50px;
+          background-color: #D5D8DC;
+          position: relative;
+          display: flex;
+          align-items: center;
+          padding-left: 40px;
+          &::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 0;
+            border-top: 7.5px solid transparent;
+            border-right: 7.5px solid gray;
+            border-bottom: 7.5px solid gray;
+            border-left: 7.5px solid transparent;
+          }
+          p {
+            width: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 26px;
+            padding-right: 25px;
+          }
+          .espacio {
+            min-width: 40px;
+          }
+        }
+      }
+    }
+  }
+}
