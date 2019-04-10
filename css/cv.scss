@@ -1,3 +1,5 @@
+@import "../../mixins";
+
 $gris:#D7D8D9;
 $azul:#295782;
 $celeste:#3A92CE;
@@ -20,19 +22,15 @@ body {
 
 .cv {
   width: 800px;
-  height: 1150px;
   background-color: $gris;
-  display: flex;
+  @include flex($align-items:stretch);
   .mitad {
-    flex-direction: row;
     &.izquierda {
       width: 320px;
       background-color: $gris;
       box-shadow: inset -20px -20px 26px 0 #423e3e3d;
       .seccion {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+        @include flex(column);
         color: white;
         margin-bottom: 0px;
         &:not(.contacto) {
@@ -69,9 +67,7 @@ body {
           }
         }
         .titulo {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          @include flex;
           width: 240px;
           height: 50px;
           border-radius: 25px 25px 0px 0px;
@@ -84,11 +80,7 @@ body {
         .contenido {
           width: 100%;
           padding: 30px 0px 50px 0px;
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-          align-content: center;
+          @include flex();
           ul {
             list-style: none;
             li {
@@ -103,9 +95,7 @@ body {
           }
           .framework {
             width: 140px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex;
             padding: 10px 5px;
             &.laravel {
               .icono {
@@ -113,10 +103,7 @@ body {
                 height: 55px;
                 background-color: white;
                 border-radius: 20%;
-                background-image: url('../images/laravel.png');
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
+                @include imagen('../images/laravel.png', cover);
               }
               .nombre {
                 padding: 10px;
@@ -127,10 +114,7 @@ body {
               .icono {
                 width: 55px;
                 height: 55px;
-                background-image: url('../images/angular.png');
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
+                @include imagen('../images/angular.png', cover);
               }
               .nombre {
                 padding: 10px;
@@ -143,10 +127,7 @@ body {
                 height: 55px;
                 background-color: white;
                 border-radius: 20%;
-                background-image: url('../images/ionic.png');
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
+                @include imagen('../images/ionic.png', cover);
               }
               .nombre {
                 padding: 10px;
@@ -158,15 +139,13 @@ body {
       }
       .perfil {
         height: 330px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        @include flex(column);
         .foto {
           width: 200px;
           height: 200px;
           border-radius: 10px;
-          background-image: url('https://via.placeholder.com/200');
+          @include imagen('../images/user.jfif', cover);
+          // background-image: url('../images/user.jfif');
         }
         .nombre {
           margin: 5px;
@@ -196,12 +175,9 @@ body {
           .doscolumnas {
             margin-top: 20px;
             padding-left: 40px;
-            display: flex;
-            justify-content: center;
-            .columna{
+            @include flex($justify-content: space-around);
+            .columna {
               &.chica {
-                display: flex;
-                align-items: center;
                 width: 20%;
               }
               &.grande {
@@ -223,6 +199,53 @@ body {
         }
         &.expriencia {
           margin-top: 20px;
+          .contenido {
+            margin-top: 20px;
+            padding-left: 40px;
+            ul {
+              li {
+                @include flex($justify-content: space-around, $align-items: normal);
+                color: grey;
+                margin: 5px 0;
+                position: relative;
+                span {
+                  width: 20%;
+                  color: #2471A3;
+                }
+                &:before {
+                  content: "";
+                  position: absolute;
+                  width: 13px;
+                  height: 13px;
+                  background-color: #CCC;
+                  top: 2px;
+                  left: 0;
+                  border-radius: 50%;
+                }
+                &:after {
+                  content: "";
+                  position: absolute;
+                  width: 3px;
+                  height: 100%;
+                  top: 10px;
+                  left: 5px;
+                  background-color: #CCC;
+                }
+                &:last-child {
+                  &:after {
+                    display: none;
+                  }
+                }
+                .textos {
+                  width: 60%;
+                  .descripcion {
+                    color: gray;
+                    text-align: justify;
+                  }
+                }
+              }
+            }
+          }
         }
         .cinta {
           width: calc(100% - 25px);
@@ -230,8 +253,7 @@ body {
           height: 50px;
           background-color: #D5D8DC;
           position: relative;
-          display: flex;
-          align-items: center;
+          @include flex($flex-wrap: nowrap);
           padding-left: 40px;
           &::before {
             content: "";
