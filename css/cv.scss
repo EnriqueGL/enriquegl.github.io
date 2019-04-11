@@ -175,76 +175,53 @@ body {
           }
         }
         &.educacion {
-          .doscolumnas {
-            margin-top: 20px;
-            padding-left: 40px;
-            @include flex($justify-content: space-around);
-            .columna {
-              &.chica {
-                width: 20%;
-              }
-              &.grande {
-                width: 60%;
-                ul {
-                  list-style-type: none;
-                }
-              }
-              ul {
-                li {
-                  color: grey;
-                  span {
-                    color: #2471A3;
-                  }
-                }
-              }
-            }
-          }
-        }
-        &.expriencia {
           margin-top: 20px;
-          .contenido {
-            margin-top: 20px;
-            padding-left: 40px;
-            ul {
-              li {
-                @include flex($justify-content: space-around, $align-items: normal);
-                color: grey;
-                margin: 5px 0;
-                position: relative;
-                span {
-                  width: 20%;
-                  color: #2471A3;
-                }
-                &:before {
-                  content: "";
-                  position: absolute;
-                  width: 13px;
-                  height: 13px;
-                  background-color: #CCC;
-                  top: 2px;
-                  left: 0;
-                  border-radius: 50%;
-                }
+        }
+        &.experiencia {
+          margin-top: 20px;
+        }
+        .contenido {
+          margin-top: 20px;
+          padding-left: 40px;
+          ul {
+            li {
+              @include flex($justify-content: space-around, $align-items: normal);
+              color: grey;
+              margin: 5px 0;
+              position: relative;
+              span {
+                width: 20%;
+                color: #2471A3;
+              }
+              &:before {
+                content: "";
+                position: absolute;
+                width: 13px;
+                height: 13px;
+                background-color: #CCC;
+                top: 2px;
+                left: 0;
+                border-radius: 50%;
+              }
+              &:after {
+                content: "";
+                position: absolute;
+                width: 3px;
+                height: 100%;
+                top: 10px;
+                left: 5px;
+                background-color: #CCC;
+              }
+              &:last-child {
                 &:after {
-                  content: "";
-                  position: absolute;
-                  width: 3px;
-                  height: 100%;
-                  top: 10px;
-                  left: 5px;
-                  background-color: #CCC;
+                  display: none;
                 }
-                &:last-child {
-                  &:after {
-                    display: none;
-                  }
-                }
-                .textos {
-                  width: 60%;
-                  .descripcion {
-                    color: gray;
-                    text-align: justify;
-                  }
+              }
+              .textos {
+                width: 60%;
+                .descripcion {
+                  color: gray;
+                  text-align: justify;
                 }
               }
             }
@@ -291,13 +268,13 @@ body {
           &.habilidades {
             .contenido {
               .textos {
-                margin-right: 0 10px;
+                margin-right: 10px;
                 .lista {
                   text-align: right;
                 }
               }
               .estrellas {
-                margin-right: 0 10px;
+                margin-right: 10px;
               }
             }
           }
@@ -305,6 +282,29 @@ body {
       }
       &.derecha {
         width: 100%;
+      }
+    }
+  }
+
+  @include responsivo(550px) {
+    .mitad {
+      &.derecha {
+        .seccion {
+          .contenido {
+            padding-left: 5px;
+            li {
+              .fecha {
+                width: 100%;
+                padding-bottom: 10px;
+                padding-left: 20px;
+              }
+              .textos {
+                width: 100% !important;
+                padding: 0px 15px 10px 15px;
+              }
+            }
+          }
+        }
       }
     }
   }
