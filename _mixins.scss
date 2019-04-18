@@ -1,0 +1,43 @@
+@mixin saltoGrande {
+  @media only screen and (max-width: 1024px){ @content; }
+}
+
+@mixin saltoMediano {
+  @media only screen and (max-width: 768px){ @content; }
+}
+
+@mixin saltoChico {
+  @media only screen and (max-width: 480px){ @content; }
+}
+
+@mixin responsivo($medida) {
+  @media only screen and (max-width: $medida){ @content; }
+}
+
+@mixin flex($flex-direction:row, $flex-wrap:wrap, $align-items:center, $justify-content:center, $align-content:center) {
+  display: flex;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  align-content: $align-content;
+}
+
+@mixin imagen($image: '', $size:contain, $position:center, $repeat:no-repeat){
+  @if $image != '' {
+    background-image: url($image);
+  }
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
+
+@mixin container($width: 75%, $limitarAMil: 'si') {
+ width: $width;
+ margin: 0 auto;
+ @if $limitarAMil == 'no' {
+   max-width: 1366px;
+ } @else {
+   max-width: 1000px;
+ }
+}
