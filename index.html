@@ -217,9 +217,9 @@
                     </div>
                 </div>
             </div>
-            <button class="descargar" onclick="print()">
+            <div class="descargar" onclick="print()">
                 <i class="fa fa-download fa-3x"></i>
-            </button>
+            </div>
         </section>
     </body>
     <script type="text/javascript">
@@ -240,7 +240,7 @@
 		html2canvas(node, {scale: quality}).then(canvas => {
 			let pdf = new jsPDF('p', 'mm', 'a4');
 			pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 211, 298);
-			pdf.save(mombre);
+			pdf.save(nombre);
 		});
 	}
     </script>

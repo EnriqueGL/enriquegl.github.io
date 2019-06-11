@@ -259,7 +259,7 @@ body {
             }
         }
     }
-    button.descargar {
+    div.descargar {
         position: fixed;
         top: 20px;
         right: 20px;
@@ -269,6 +269,9 @@ body {
         border: 1px solid white;
         border-radius: 50%;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         i {
             color: $celeste;
             animation: down 1.5s .5s ease infinite;
