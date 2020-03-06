@@ -33,7 +33,7 @@ body {
                 @include flex(column);
                 color: white;
                 margin-bottom: 0px;
-                &:not(.contacto) {
+                &:not(.herramientas) {
                     margin-bottom: -50px;
                 }
                 &.habilidades {
@@ -70,6 +70,30 @@ body {
                         }
                     }
                 }
+                &.herramientas {
+                    .titulo {
+                        background-color: $celeste;
+                        box-shadow: 0px -10px 3px -5px #244C71;
+                    }
+                    .contenido {
+                        background-color: $celeste;
+                        box-shadow: 0px -6px 3px -1px #244C71;
+                        div {
+                            width: 50px;
+                            height: 50px;
+                            margin: 0 5px;
+                            &.github {
+                                @include imagen('../images/github.png', cover);
+                            }
+                            &.phpstorm {
+                                @include imagen('../images/phpstorm.png', cover);
+                            }
+                            &.bitbucket {
+                                @include imagen('../images/bitbucket.png', cover);
+                            }
+                        }
+                    }
+                }
                 .titulo {
                     @include flex;
                     width: 240px;
@@ -99,7 +123,7 @@ body {
                     }
                     .framework {
                         width: 140px;
-                        @include flex;
+                        @include flex(column);
                         padding: 10px 5px;
                         &.laravel {
                             .icono {
@@ -136,6 +160,17 @@ body {
                             .nombre {
                                 padding: 10px;
                                 font-size: 18px;
+                            }
+                        }
+                        &.vue {
+                            .icono {
+                                width: 55px;
+                                height: 55px;
+                                @include imagen('../images/vue.png', cover);
+                            }
+                            .nombre {
+                                padding: 10px;
+                                font-size: 17px;
                             }
                         }
                     }
@@ -219,6 +254,13 @@ body {
                             }
                             .textos {
                                 width: 60%;
+                                .titulo {
+                                    &.freelance:after {
+                                        content: " (freelance)";
+                                        color: $cyan;
+                                        font-size: 13px;
+                                    }
+                                }
                                 .descripcion {
                                     color: gray;
                                     text-align: justify;
