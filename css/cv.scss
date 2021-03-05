@@ -22,7 +22,7 @@ body {
 
 .cv {
     width: 800px;
-    background-color: $gris;
+    background-color: $azul;
     @include flex($align-items:stretch);
     .mitad {
         &.izquierda {
@@ -92,6 +92,19 @@ body {
                             &.bitbucket {
                                 @include imagen('../images/bitbucket.png', contain);
                             }
+                            &.webstorm {
+                                @include imagen('../images/webstorm.svg', contain);
+                            }
+                            &.datagrip {
+                                @include imagen('../images/datagrip.svg', contain);
+                            }
+                            &.heidisql {
+                                @include imagen('../images/heidisql.png', contain);
+                            }
+                            &.gitlab {
+                                @include imagen('../images/gitlab.png', contain);
+                            }
+
                         }
                     }
                 }
@@ -218,7 +231,7 @@ body {
                 }
                 .contenido {
                     margin-top: 20px;
-                    padding-left: 40px;
+                    padding-left: 15px;
                     ul {
                         li {
                             @include flex($justify-content: space-around, $align-items: normal);
